@@ -17,11 +17,23 @@
     <title>Homepage</title>
   </head>
 <body>
-    <div class="homepage__container">
-      <div class="box" id="about">About Me</div>
-      <div class="box" id="contacts">Contacts</div>
-      <div class="box" id="projects">Projects</div>
-    </div>
+  <section id="homepage">
+        <div class="diagonal-container">
+            <?php
+                $sections = [
+                    ["title" => "ABOUT ME", "class" => "about"],
+                    ["title" => "CONTACTS", "class" => "contacts"],
+                    ["title" => "PROJECTS", "class" => "projects"]
+                ];
+
+                foreach ($sections as $section) {
+                    echo '<div class="diagonal-section ' . $section["class"] . '">';
+                    echo '<span>' . $section["title"] . '</span>';
+                    echo '</div>';
+                }
+            ?>
+        </div>
+    </section>
 
     <script src="script.js"></script>
   </body>

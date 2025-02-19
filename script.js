@@ -4,20 +4,37 @@ document.getElementById("flipButton").addEventListener("click", function () {
 
   // Optionally, wait for the flip animation to finish
   setTimeout(() => {
-    window.location.href = "hero.html"; // Or "home.php"
-  }, 1000); // Adjust the timeout based on your CSS animation duration
+    window.location.href = "hero.php"; // Or "home.php"
+  }, 5000); // Adjust the timeout based on your CSS animation duration
 });
 
 
 //Homepage animation 
-// Optional: Add any click or additional hover functionality here
-// For example, navigate to another page when clicking a box:
-document.getElementById('about').addEventListener('click', function() {
-  window.location.href = 'about.html'; // Create and link to your "About Me" page
-});
-document.getElementById('contacts').addEventListener('click', function() {
-  window.location.href = 'contacts.html'; // Create and link to your "Contacts" page
-});
-document.getElementById('projects').addEventListener('click', function() {
-  window.location.href = 'projects.html'; // Create and link to your "Projects" page
+document.addEventListener("DOMContentLoaded", () => {
+  const sections = document.querySelectorAll(".diagonal-section");
+
+  sections.forEach((section, index) => {
+    section.style.top = `${10 + index * 30}%`; // Adjust positioning
+    section.style.left = "-50%"; // Position them outside of view initially
+
+    // Animate them into view
+    setTimeout(() => {
+      section.style.left = "0";
+    }, index * 500);
+
+    // Hover effect to blur other sections
+    section.addEventListener("mouseenter", () => {
+      sections.forEach((other) => {
+        if (other !== section) {
+          other.style.filter = "blur(5px)";
+        }
+      });
+    });
+
+    section.addEventListener("mouseleave", () => {
+      sections.forEach((other) => {
+        other.style.filter = "none";
+      });
+    });
+  });
 });

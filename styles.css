@@ -3,6 +3,9 @@ body {
   font-family: "PT Serif Caption", serif;
   margin: 0;
   padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
 }
 
 /* Welcome Section (Background Black) */
@@ -94,32 +97,32 @@ body {
 }
 
 .icons__container {
-    display: flex;
-    justify-content: baseline;
-    flex-direction: row;
-    
-    
+  display: flex;
+  justify-content: baseline;
+  flex-direction: row;
 }
+
 .github-icon {
-    font-size: 2rem;
-    cursor: pointer;
-    margin-right: 5px;
-    transition: transform 1s;
+  font-size: 2rem;
+  cursor: pointer;
+  margin-right: 5px;
+  transition: transform 1s;
 }
 
 .linkedin-icon {
-    font-size: 2rem;
-    cursor: pointer;
-    transition: transform 0.9s;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: transform 0.9s;
 }
 
 .github-icon:hover {
-transform: scale(1.2);
+  transform: scale(1.2);
 }
 
 .linkedin-icon:hover {
-    transform: scale(1.2);
+  transform: scale(1.2);
 }
+
 #flipButton {
   font-size: 24px;
   margin: 50px;
@@ -139,4 +142,42 @@ transform: scale(1.2);
   transform: scale(1.2);
 }
 
-/*Homepage*/
+/* Homepage Section */
+#homepage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container for diagonal sections */
+.diagonal-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Diagonal Sections */
+.diagonal-section {
+    position: absolute;
+    width: 200%;
+    height: 33%;
+    background-color: black;
+    transform: rotate(-25deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: filter 0.5s ease-in-out, transform 0.5s;
+}
+
+/* Positioning via JavaScript */
+.diagonal-section span {
+    font-size: 2rem;
+    color: white;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 10px 20px;
+    border-radius: 10px;
+    transition: background 0.3s ease-in-out;
+}
+
+/* Hover Effect - Handled in JavaScript */
