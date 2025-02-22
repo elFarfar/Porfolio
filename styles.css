@@ -17,7 +17,7 @@ html {
     #333,
     #111
   );
-  background-size: 400% 400%;
+  background-size: 800% 800%;
   animation: metallicShine 50s infinite linear;
 }
 
@@ -417,11 +417,11 @@ html {
 .timeline {
   display: flex;
   flex-direction: column;
-  gap: 40px; /* Space between timeline items */
+  gap: 40px;
   padding: 40px 20px;
   position: relative;
   margin: 50px auto;
-  width: 80%; /* Adjust width */
+  width: 80%;
   height: 150vh;
 }
 
@@ -437,6 +437,7 @@ html {
 }
 
 .timeline-item {
+  background-color: transparent;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -490,7 +491,7 @@ html {
   background: linear-gradient(97deg, #4e4feb, #068fff 50%, #4d4c4c);
   transform: scale(1.1);
 }
-
+/*IMAGES-PROJECTS*/
 .project-image img {
   border-radius: 10px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
