@@ -70,24 +70,43 @@
           <p class="paragraph-4">Get to know me better</p>
         </div>
       </div>
-      <div class="timeline">
-  <div class="timeline-item left">
-    <div class="timeline-content">
-      <div class="timeline-bar"></div>
-      <div class="timeline-text">
-        <h1 class="heading-6" id="project-1">Movies to Watch</h1>
-        <p class="paragraph-5">
-          Movies To Watch is a simple yet effective tool 
-          <br>designed for film enthusiasts who want to keep
-           <br>track of the movies and series they plan to watch.
-          </p>
-        <div class="button-project">
+    <div class="timeline">
+  <div class="timeline-bar"></div> <!-- Timeline bar in center -->
+
+  <!-- Timeline Item 1 -->
+  <div class="timeline-item">
+    <div class="timeline-text">
+      <h1 class="heading-6">Movies to Watch</h1>
+      <p class="paragraph-5">
+        Movies To Watch is a simple yet effective tool designed for film enthusiasts 
+        <br> who want to keep track of the movies and series they plan to watch.
+      </p>
+      <div class="button-project">
+        <a href="https://github.com/chas-academy/MoviesToWatch-elfarfar">
           <button type="submit">SEE THIS PROJECT</button>
-        </div>
+        </a>
       </div>
-      <div class="project-1--image">
-        <img src="/img/Movies to watch-1.png" alt class="image-2">
+    </div>
+    <div class="project-image">
+      <img src="/img/mtw.png" alt="Movies to Watch">
+    </div>
+  </div>
+
+  <!-- Timeline Item 2 -->
+  <div class="timeline-item">
+    <div class="timeline-text">
+      <h1 class="heading-6">MovieScout</h1>
+      <p class="paragraph-5">
+        MovieScout lets users explore, rate, and review movies. 
+        It provides detailed movie information, cast and crew lists, user ratings, and reviews. 
+        Admins can manage content, ensuring an up-to-date and engaging movie database.
+      </p>
+      <div class="button-project">
+        <button type="submit">SEE THIS PROJECT</button>
       </div>
+    </div>
+    <div class="project-image">
+      <img src="/img/MOVIESCOUT.png" alt="MovieScout">
     </div>
   </div>
 </div>
