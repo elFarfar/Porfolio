@@ -7,9 +7,9 @@
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Grandstander:ital,wght@0,100..900;1,100..900&family=PT+Serif+Caption:ital@0;1&display=swap"
-    rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Saira+Extra+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <script
     src="https://kit.fontawesome.com/fce38b1700.js"
     crossorigin="anonymous"></script>
@@ -18,26 +18,34 @@
 
 <body>
   <section id="Welcome">
-    <div class="flip-container">
-      <video autoplay muted loop id="background-video" width="700">
+    <div class="main">
+      <video autoplay muted loop id="background-video">
         <source src="videos/Particles.mp4" type="video/mp4" />
         Your browser does not support video.
       </video>
-      <div class="front__page">
-        <div class="front__container">
-          <div class="front__content">
-            <h1>WELCOME TO ALEX'S PORTFOLIO</h1>
-            <div class="icons__container">
-              <i class="fa-brands fa-github github-icon" style="color: pink"></i>
-              <i class="fa-brands fa-linkedin linkedin-icon" style="color: blue"></i>
-            </div>
-          </div>
-
-          <div class="button--function">
-            <buttononclick="window.location.href='home.php'" id="flipButton">WELCOME</button>
+      <div class="main__container">
+        <div class="main__content">
+          <h1>WELCOME</h1>
+          <div class="icons__container">
+            <a href="https://github.com/elFarfar">
+            <i  class="fa-brands fa-github github-icon"></i>
+            </a>
+            <a href="https://se.linkedin.com/in/alex-%C3%B6hlin-58476b2ab"> 
+            <i class="fa-brands fa-linkedin linkedin-icon"></i>
+            </a>
           </div>
         </div>
+        <div class="button--function">
+          <form id="fadeForm" action="process.php" method="POST">
+            <button type="submit" id="fadeButton">ENTER</button>
+          </form>
+        </div>
       </div>
+    </div>
+
+    <!-- Fade Overlay (Hidden Initially) -->
+    <div id="fade-overlay"></div>
+
   </section>
 
   <script src="script.js"></script>

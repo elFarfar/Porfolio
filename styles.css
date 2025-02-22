@@ -1,183 +1,531 @@
 /* Global Styles */
-body {
-  font-family: "PT Serif Caption", serif;
+body,
+html {
+  scroll-behavior: smooth;
+  font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
   margin: 0;
   padding: 0;
   height: 100%;
   width: 100%;
-  overflow: hidden;
+  background: linear-gradient(
+    135deg,
+    #111,
+    #333,
+    #666,
+    #000530,
+    #666,
+    #333,
+    #111
+  );
+  background-size: 400% 400%;
+  animation: metallicShine 50s infinite linear;
 }
 
-/* Welcome Section (Background Black) */
+@keyframes metallicShine {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Welcome Section */
 #Welcome {
   position: relative;
   width: 100%;
   height: 100vh;
-  overflow: hidden; /* Prevents scrolling if the video is too big */
-  background-color: black;
+  overflow: hidden;
 }
 
-/* Flip Container */
-.flip-container {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  perspective: 1000px; /* Adds depth for any 3D effects */
-}
-
-/* Background Video */
 #background-video {
-  opacity: 0.3; /* Use 0.3 instead of 30% for proper CSS opacity */
+  opacity: 0.1;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) rotate(45deg); /* Center and rotate video */
-  width: 100vh; /* Adjust as needed */
+  transform: translate(-50%, -50%) rotate(45deg);
+  width: 100vh;
   height: 100vh;
-  object-fit: cover; /* Ensures the video covers the area */
-  z-index: -1; /* Places the video behind content */
-  backface-visibility: hidden;
+  object-fit: cover;
 }
 
-/* Front and Back Pages */
-.front__page,
-.back__page {
-  position: absolute;
-  top: 0;
-  left: 0;
+/* Main Container */
+.main {
+  position: relative;
   width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.6s;
 }
 
-/* Front Page */
-.front__page {
-  z-index: 2; /* Keeps front side on top initially */
-}
-
-/* Front Content Styling */
-.front__content {
+.main__container {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-}
-
-.front__content h1 {
-  font-size: 3rem;
+  z-index: 1;
   color: white;
 }
 
-/* Back Page */
-.back__page {
-  background-color: black;
-  transform: rotateY(180deg); /* Hidden initially */
+.main__content h1 {
+  font-size: 3rem;
+  color: white;
+  margin-bottom: 20px;
 }
 
-/* Flip Transitions */
-.flip-container.flip .front__page {
-  transform: rotateY(180deg);
-}
-
-.flip-container.flip .back__page {
-  transform: rotateY(0deg);
-}
-
-/* Button Styles */
-.button--function {
-  padding: 15px;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  flex-direction: column;
-}
-
+/* Icons */
 .icons__container {
   display: flex;
-  justify-content: baseline;
-  flex-direction: row;
+  gap: 15px;
+  margin-bottom: 20px;
+  justify-content: center;
 }
 
-.github-icon {
-  font-size: 2rem;
-  cursor: pointer;
-  margin-right: 5px;
-  transition: transform 1s;
-}
-
+.github-icon,
 .linkedin-icon {
   font-size: 2rem;
   cursor: pointer;
-  transition: transform 0.9s;
+  transition: transform 0.3s;
 }
 
-.github-icon:hover {
-  transform: scale(1.2);
+.github-icon {
+  color: purple;
 }
 
+.linkedin-icon {
+  color: blue;
+}
+
+.github-icon:hover,
 .linkedin-icon:hover {
   transform: scale(1.2);
 }
 
-#flipButton {
-  font-size: 24px;
-  margin: 50px;
-  cursor: pointer;
-  background-color: black;
-  color: white;
-  border: none;
-  border-radius: 15px;
-  transition: background-color 2s, transform 1s;
+/* Button */
+.button--function {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
 }
 
-#flipButton:hover {
-  background-color: rgb(12, 12, 101);
-  transform: scale(1.2);
+.button--function button {
+  font-size: 20px;
+  min-width: 120px;
+  cursor: pointer;
+  background-color: black;
+  color: white;
+  border: 2px solid white;
+  border-radius: 25px;
+  transition: background-color 0.5s, transform 0.3s;
+  padding: 10px 20px;
 }
 
-/* Homepage Section */
-#homepage {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+.button--function button:hover {
+  background-color: white;
+  color: black;
+  transform: scale(1.1);
 }
 
-/* Container for diagonal sections */
-.diagonal-container {
-    position: relative;
-    width: 100%;
-    height: 100%;
+/* Fade Effect Overlay */
+#fade-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s ease-in-out;
 }
 
-/* Diagonal Sections */
-.diagonal-section {
-    position: absolute;
-    width: 200%;
-    height: 33%;
-    background-color: black;
-    transform: rotate(-25deg);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: filter 0.5s ease-in-out, transform 0.5s;
+#fade-overlay.fade-in {
+  opacity: 1;
+  visibility: visible;
+}
+/*NAVBAR*/
+.navbar {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+.no-underline {
+  text-decoration: none;
+  scrolling:smoo
 }
 
-/* Positioning via JavaScript */
-.diagonal-section span {
-    font-size: 2rem;
-    color: white;
-    background: rgba(255, 255, 255, 0.7);
-    padding: 10px 20px;
-    border-radius: 10px;
-    transition: background 0.3s ease-in-out;
+.nav-container {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  padding: 10px 15px;
+  justify-content: space-between;
+  text-decoration: none;
 }
 
-/* Hover Effect - Handled in JavaScript */
+.nav-content {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 20px;
+}
+
+.contact,
+.project {
+  font-size: 1.2rem;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.contact:hover,
+.project:hover {
+  transform: scale(1.1);
+  color: #068fff;
+}
+
+/*HOME PAGE*/
+
+.container {
+  width: 100%;
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-flex {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+#profile-pic {
+  width: 300px;
+  height: 600px;
+  object-fit: cover;
+}
+
+/*TEXT SECTION*/
+.hello-flex {
+  display: block;
+  unicode-bidi: isolate;
+  padding-top: 80px;
+  top: 80%;
+}
+
+.heading-2,
+.heading-3 {
+  margin-left: -0.09em;
+  display: inline-block;
+}
+
+.heading-2 {
+  color: #eeeeee;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: Heebo, sans-serif;
+  font-size: 5.21em;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.my-name {
+  display: flex;
+  unicode-bidi: isolate;
+  gap: 10px;
+}
+
+.heading-3 {
+  color: #eeeeee;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: Heebo, sans-serif;
+  font-size: 5.21em;
+  font-weight: 700;
+  line-height: 1.4;
+}
+.heading-4 {
+  background-image: linear-gradient(97deg, #4e4feb, #068fff 50%, #eeeeee);
+  -webkit-background-clip: text;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: Heebo, sans-serif;
+  font-size: 5.21em;
+  font-weight: 700;
+  line-height: 1.4;
+  background-clip: text; /* For modern browsers */
+  color: transparent;
+}
+
+.paragraph {
+  text-align: left;
+  margin-top: -1.03em;
+  font-size: 1.3em;
+  font-weight: 500;
+  color: #eeeeee;
+}
+.paragraph-2 {
+  text-align: left;
+  color: #eeeeee;
+  max-width: 26.8em;
+  margin-top: 1.04em;
+}
+.paragraph p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  unicode-bidi: isolate;
+}
+
+.paragraph-2 strong {
+  font-weight: bold;
+}
+.hero-icons {
+  position: relative;
+  width: 100%; /* Anpassa bredd */
+  height: 300px; /* Anpassa höjd */
+  overflow: hidden; /* Förhindrar ikoner från att flyga ut */
+}
+
+.hero-icons i {
+  position: absolute;
+  font-size: 50px; /* Justera ikonstorlek */
+  opacity: 0.8;
+  animation: floatAround 5s infinite alternate ease-in-out;
+}
+
+/* Unika positioner och hastigheter för varje ikon */
+.js-icon {
+  top: 40%;
+  left: 20%;
+  animation-duration: 4s;
+  color: yellow;
+}
+
+.php-icon {
+  top: 30%;
+  left: 40%;
+  animation-duration: 6s;
+  color: #4e4feb;
+}
+
+.html5-icon {
+  top: 50%;
+  color: red;
+  left: 80%;
+  animation-duration: 5s;
+}
+
+.sass-icon {
+  color: #b94eeb;
+  top: 70%;
+  left: 40%;
+  animation-duration: 7s;
+}
+
+.css-icon {
+  color: #068fff;
+  top: 50%;
+  left: 60%;
+  animation-duration: 4.5s;
+}
+
+/* Keyframe-animation för flytande rörelse */
+@keyframes floatAround {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(20px, -10px) rotate(10deg);
+  }
+  50% {
+    transform: translate(-15px, 15px) rotate(-10deg);
+  }
+  75% {
+    transform: translate(10px, -20px) rotate(15deg);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+/*MY IMAGE*/
+
+.hero-image {
+  margin-right: 5.56em;
+  display: block;
+  unicode-bidi: isolate;
+}
+
+.image-1 {
+  max-width: 100%;
+  height: auto;
+  position: absolute;
+  top: 50%;
+
+  right: 8.56em;
+  transform: translateY(-50%);
+}
+
+/*PROJECT SECTION*/
+
+.project-container {
+  width: 100%;
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5em;
+  margin-top: 70px;
+}
+
+.projectwrapper {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  display: flex;
+}
+
+.heading-5 {
+  color: #001f7c;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: Heebo, sans-serif;
+  font-size: 5.21em;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.paragraph-3 {
+  color: #eeeeee;
+  max-width: 26.8em;
+  margin-top: 0;
+  font-size: 1.2rem;
+}
+
+.paragraph-4 {
+  background-image: linear-gradient(97deg, #111, #068fff 50%, #474747);
+  -webkit-background-clip: text;
+  background-clip: text;
+  margin-top: -0.03em;
+  color: transparent;
+  font-size: 1.8rem;
+}
+
+/* General Timeline Styles */
+/* General Timeline Styles */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 40px; /* Space between timeline items */
+  padding: 40px 20px; /* Space around the timeline */
+}
+
+.timeline-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  padding: 20px;
+}
+
+.timeline-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.timeline-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.timeline-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 50%; /* Limit width of text area */
+}
+
+.timeline-bar {
+  width: 2px;
+  height: 100%;
+  background-color: #ccc;
+  position: absolute;
+  left: 50%; /* Position the timeline bar in the middle */
+  top: 0;
+  bottom: 0;
+  transform: translateX(-50%);
+}
+
+/* Left-aligned content */
+.timeline-item.left {
+  position: relative; /* To position the timeline bar */
+}
+
+.heading-6 {
+  font-size: 1.8em;
+  margin-top: 10px;
+  color: #001f7c;
+  font-weight: 700;
+}
+.paragraph-5 {
+  color: #eeeeee;
+  max-width: 26.8em;
+  margin-top: 0;
+  font-size: 1.2rem;
+}
+
+.timeline-content .button-project button {
+  padding: 5px 20px;
+  background-color: transparent;
+  color: white;
+  border: 1.5px solid white;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background 0.5s ease, transform 1.1s;
+}
+
+.timeline-content .button-project button:hover {
+  background: linear-gradient(97deg, #4e4feb, #068fff 50%, #4d4c4c);
+  transform: scale(1.1);
+}
+
+/* Image Styling */
+.image-2 {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-left: 50px; /* Space between text and image */
+  position: absolute;
+  top: 50%;
+  right: 8.56em;
+  transform: translateY(-50%);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .timeline-item {
+    flex-direction: column; /* Stack content vertically on smaller screens */
+    text-align: center;
+  }
+
+  .timeline-text {
+    width: 100%; /* Allow full width for content */
+  }
+
+  .timeline-bar {
+    display: none; /* Hide the timeline bar on small screens */
+  }
+
+  .timeline-item img {
+    margin-left: 0; /* Remove left margin for small screens */
+  }
+}
