@@ -525,8 +525,9 @@ html {
 }
 
 .paragraph-7 {
-  font-size: 1.3rem;
-  color: white;
+  font-size: 1.2rem;
+  color: #111;
+  font-weight: 700;
 }
 
 .button-contact button {
@@ -544,3 +545,4 @@ html {
   transform: scale(1.1);
   color: #001f7c;
 }
+/*ADD MEDIA */

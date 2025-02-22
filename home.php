@@ -117,14 +117,14 @@
   <section id="contact">
     <div class="contact-container">
       <div class="reachout-workholder">
-        <h1 class="heading-7">Reach out to me!</h1>
+        <h1 class="heading-7">CONTACT</h1>
         <p class="paragraph-6">Have a question or want to collaborate? Feel free to reach out to me!</p>
         <div class="button-contact">
           <a href="https://mail.google.com/mail/u/1/?fs=1&to=alex.ohlin96@gmail.com&tf=cm">
             <button type="submit">Email me</button>
           </a>
         </div>
-        <p class="paragraph-7">Or add me on: </p>
+        <p class="paragraph-7"></p>
         <a href="https://github.com/elFarfar">
             <i  class="fa-brands fa-github github-icon"></i>
             </a>
