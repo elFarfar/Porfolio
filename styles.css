@@ -446,6 +446,7 @@ html {
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
   padding: 20px;
   width: 100%;
+  margin-bottom: 90px;
 }
 
 .timeline-item.visible {
@@ -496,3 +497,6 @@ html {
   border-radius: 10px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
 }
+
+/*CONTACT SECTION*/
+

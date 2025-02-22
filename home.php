@@ -111,7 +111,25 @@
   </div>
 </div>
     </section>
-
+  <section id="contacts">
+    <div class="contact-container">
+      <div class="reachout-workholder">
+        <h1 class="heading-7">Reach out to me</h1>
+        <p class="paragraph-5">Have a question or want to collaborate? Feel free to reach out to me!</p>
+        <div class="button-contact">
+          <button type="submit">Email me</button>
+        </div>
+        <p class="paragraph-6">Or add me on: </p>
+        <a href="https://github.com/elFarfar">
+            <i  class="fa-brands fa-github github-icon"></i>
+            </a>
+            <a href="https://se.linkedin.com/in/alex-%C3%B6hlin-58476b2ab"> 
+            <i class="fa-brands fa-linkedin linkedin-icon"></i>
+            </a>
+      </div>
+    </div>
+    .
+  </section>
 
     <script src="script.js"></script>
 </body>
