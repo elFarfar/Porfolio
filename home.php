@@ -103,7 +103,9 @@
         Admins can manage content, ensuring an up-to-date and engaging movie database.
       </p>
       <div class="button-project">
-        <button type="submit">SEE THIS PROJECT</button>
+        <a href="https://github.com/chas-academy/u04-imdb-klon-grupp4">
+          <button type="submit">SEE THIS PROJECT</button>
+        </a>
       </div>
     </div>
     <div class="project-image">
