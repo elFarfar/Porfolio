@@ -507,10 +507,26 @@ html {
   flex-direction: column;
   text-align: center;
   top: 50vh;
+  height: 100vh;
 }
 
 .reachout-workolder {
   display: flex;
+}
+
+.heading-7 {
+  font-size: 2rem;
+  color: #ffffff;
+}
+
+.paragraph-6 {
+  font-size: 1.5rem;
+  color: #068fff;
+}
+
+.paragraph-7 {
+  font-size: 1.3rem;
+  color: white;
 }
 
 .button-contact button {
