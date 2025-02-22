@@ -87,10 +87,12 @@ html {
   font-size: 2rem;
   cursor: pointer;
   transition: transform 0.3s;
+  text-decoration: none;
 }
 
 .github-icon {
   color: purple;
+  text-decoration: none;
 }
 
 .linkedin-icon {
@@ -499,4 +501,30 @@ html {
 }
 
 /*CONTACT SECTION*/
+.contact-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  top: 50vh;
+}
 
+.reachout-workolder {
+  display: flex;
+}
+
+.button-contact button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: white;
+  color: #000530;
+  border: 2px solid white;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: color 0.5s ease, transform 0.3s;
+}
+
+.button-contact button:hover {
+  transform: scale(1.1);
+  color: #001f7c;
+}

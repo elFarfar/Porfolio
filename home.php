@@ -21,8 +21,9 @@
 <nav class="navbar">
   <div class="nav-container">
     <div class="nav-content">
-
-      <i class="contact">CONTACTS</i>
+      <a href="#contact" class="no-underline">
+        <i class="contact">CONTACTS</i>
+      </a>
       <a href="#project" class="no-underline">
         <i class="project">PROJECTS</i>
       </a>
@@ -111,13 +112,15 @@
   </div>
 </div>
     </section>
-  <section id="contacts">
+  <section id="contact">
     <div class="contact-container">
       <div class="reachout-workholder">
         <h1 class="heading-7">Reach out to me</h1>
         <p class="paragraph-5">Have a question or want to collaborate? Feel free to reach out to me!</p>
         <div class="button-contact">
-          <button type="submit">Email me</button>
+          <a href="https://mail.google.com/mail/u/1/?fs=1&to=alex.ohlin96@gmail.com&tf=cm">
+            <button type="submit">Email me</button>
+          </a>
         </div>
         <p class="paragraph-6">Or add me on: </p>
         <a href="https://github.com/elFarfar">
