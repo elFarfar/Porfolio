@@ -18,6 +18,18 @@ document.addEventListener("DOMContentLoaded", function () {
   checkScroll(); // Run on page load in case some cards are already in view
 });
 
+//view Cv image on about me -card 
+document.getElementById("cvButton").addEventListener("click", function(event) {
+  event.preventDefault(); // Prevent the default link action
+  
+  var imageDiv = document.getElementById("cvImage");
+  if (imageDiv.style.display === "none") {
+    imageDiv.style.display = "block"; // Show the image
+  } else {
+    imageDiv.style.display = "none"; // Hide the image
+  }
+});
+
 //Form submission
 
 document.getElementById("contact-form").addEventListener("submit", function(event) {
