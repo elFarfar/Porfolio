@@ -1,18 +1,17 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const timelineItems = document.querySelectorAll(".timeline-item");
+  const cards = document.querySelectorAll(".card");
 
-  function checkVisibility() {
-    const windowHeight = window.innerHeight;
+  function checkScroll() {
+    const triggerBottom = window.innerHeight * 0.85;
 
-    timelineItems.forEach((item) => {
-      const position = item.getBoundingClientRect().top;
-      // Check if the item is in the viewport
-      if (position < windowHeight * 0.8 && position >= 0) {
-        item.classList.add("visible");
+    cards.forEach((card) => {
+      const cardTop = card.getBoundingClientRect().top;
+      if (cardTop < triggerBottom) {
+        card.classList.add("show");
       }
     });
   }
 
-  checkVisibility();
-  window.addEventListener("scroll", checkVisibility);
+  window.addEventListener("scroll", checkScroll);
+  checkScroll(); // Run on page load in case some cards are already in view
 });
