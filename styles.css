@@ -141,3 +141,18 @@ body {
   align-items: center; 
 }
 
+/*FOOTER */
+.footer .fa-brands {
+  gap: 100px;
+  color: white;
+  transition: transform 0.3s ease-in-out;
+}
+
+.footer .fa-brands:hover {
+  transform: scale(1.2);
+  color: #002aaa;
+}
+
+.footer p {
+  margin-top: 50px;
+}
