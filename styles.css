@@ -41,15 +41,13 @@ body {
   font-weight: bold;
 }
 .navbar .navbar-toggler {
-  color: white; 
+  color: white;
   transition: transform 0.3s ease-in-out;
   transform: rotate(0deg);
 }
 
-
-
 .navbar-toggler[aria-expanded="true"] {
-  transform: rotate(90deg); /* Rotates when menu is open */
+  transform: rotate(90deg);
 }
 .navbar-toggler-icon {
   filter: invert(1);
@@ -97,13 +95,12 @@ body {
 
 /*About Me Section*/
 
-
 #aboutMe {
   margin-bottom: 250px; /* Increases space below the About Me section */
 }
 
 #project {
-  margin-top: 50px; 
+  margin-top: 50px;
   margin-bottom: 250px;
 }
 
@@ -150,22 +147,21 @@ body {
 }
 
 /* Contact section */
-#contact  {
+#contact {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  
 }
 #contact-form {
-  width: 25rem; 
-  margin: 0 auto; 
-  display: flex; 
-  flex-direction: column; 
-  justify-content: center; 
-  align-items: center; 
+  width: 25rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 /*FOOTER */
