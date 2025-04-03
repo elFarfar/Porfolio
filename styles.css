@@ -17,27 +17,52 @@ body {
 
 @keyframes metallicShine {
   0% {
-    background-position: 0% 50%;
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
   }
   100% {
-    background-position: 100% 50%;
+    background-position: 0% 0%;
   }
 }
 
 /* Navbar */
 
-
+.navbar {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  padding: 1rem 2rem;
+  width: 100%;
+  z-index: 999;
+}
 .navbar-brand {
   font-weight: bold;
 }
+.navbar .navbar-toggler {
+  color: white; 
+  transition: transform 0.3s ease-in-out;
+  transform: rotate(0deg);
+}
+
+
+
+.navbar-toggler[aria-expanded="true"] {
+  transform: rotate(90deg); /* Rotates when menu is open */
+}
 .navbar-toggler-icon {
-  color: #007bff;
+  filter: invert(1);
+}
+.navbar-collapse {
+  display: flex;
 }
 
 .nav-link {
   font-size: 1.1rem;
   text-transform: uppercase;
   transition: color 0.3s;
+  width: fit-content;
 }
 .nav-link:hover {
   color: white;
@@ -53,8 +78,10 @@ body {
 }
 
 #profilePhoto {
-  max-width: 250px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  max-width: 80%;
+  width: fit-content;
+  box-shadow: 0 0 15px rgb(161 161 161 / 46%);
+  object-fit: cover;
 }
 
 /* Ikoner i hero-sektionen */
