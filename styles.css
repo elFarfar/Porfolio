@@ -1,6 +1,5 @@
-/* Grundläggande styling */
+
 body {
-  font-family: "Grandstander", cursive;
   background: linear-gradient(
     135deg,
     #111,
@@ -30,7 +29,7 @@ body {
 /* Navbar */
 
 .navbar {
-  position: fixed !important;
+  position: fixed;
   top: 0;
   left: 0;
   padding: 1rem 2rem;
@@ -71,9 +70,7 @@ body {
   color: white;
 }
 
-.hero h1 span {
-  color: #ffc107;
-}
+
 
 #profilePhoto {
   max-width: 80%;
@@ -90,13 +87,18 @@ body {
 
 .hero .fa-brands:hover {
   transform: scale(1.2);
-  color: #002aaa;
+}
+section.hero a.github-link {
+  color: white;
+}
+section.hero a.github-link:hover {
+  color: rgba(255, 255, 255, 0.675);
 }
 
 /*About Me Section*/
 
 #aboutMe {
-  margin-bottom: 250px; /* Increases space below the About Me section */
+  margin-bottom: 250px;
 }
 
 #project {
@@ -133,7 +135,17 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
+.custom-btn {
+  background-color: #212529; 
+  color: #fff;
+  border: 1px solid #f8f9fa;
+  transition: background-color 0.6s ease, color 0.3s ease;
+}
 
+.custom-btn:hover {
+  background-color: #f8f9fa;
+  color: #000;
+}
 /* Scroll animation */
 @keyframes fadeInUp {
   from {
